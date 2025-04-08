@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply bg-pizza-background text-pizza-black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Migliora rendering */
+  text-rendering: optimizeSpeed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  @apply text-pizza-black;
+}
+
+input, textarea, select {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Nascondi la scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-pizza-gold;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-pizza-gold-dark;
+}
+
+/* Ottimizzazione delle animazioni in base alle preferenze */
+@media (prefers-reduced-motion) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disabilita le trasformazioni hover che potrebbero causare jank */
+  .transition-all-300,
+  .transition-all,
+  .transition-transform,
+  .transition-colors,
+  .transition-opacity {
+    transition: none !important;
+  }
+  
+  /* Stabilizza la scrollbar per evitare salti */
+  body {
+    overflow-y: scroll;
+  }
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* Stili per testi evidenziati */
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8px;
+  @apply bg-pizza-gold;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Stili moderni per la pizzeria */
+@layer components {
+  .pizza-btn {
+    @apply rounded-full font-medium shadow-md transition-all duration-200 px-6 py-3;
+    transform-origin: center;
+  }
+  .pizza-btn:hover {
+    @apply scale-105 shadow-lg;
+  }
+
+  .pizza-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-200;
+  }
+  .pizza-card:hover {
+    @apply shadow-xl;
+  }
+
+  .pizza-section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .pizza-title {
+    @apply text-4xl md:text-5xl mb-6 text-pizza-black relative font-playfair;
+  }
+
+  .pizza-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    @apply bg-pizza-gold;
+  }
+
+  .pizza-subtitle {
+    @apply text-xl md:text-2xl mb-4 text-gray-700;
+  }
+
+  .menu-item {
+    @apply border-b border-gray-200 py-4 px-3 transition-colors duration-200;
+  }
+  .menu-item:hover {
+    @apply bg-gray-50;
+  }
+
+  .menu-item-image {
+    @apply rounded-full h-16 w-16 object-cover border-2 border-pizza-gold;
+  }
+
+  .menu-item-price {
+    @apply text-lg font-bold text-pizza-gold;
+  }
+}
+
+html {
+  scroll-padding-top: 80px; /* Altezza della navbar */
+  scroll-behavior: smooth;
+}
