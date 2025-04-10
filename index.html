@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#C9A227" />
     <meta
       name="description"
       content="Il Capriccio Pizzeria - Tradizione e passione per la pizza artigianale nelle sedi di Canicattini Bagni e Avola"
     />
-    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
     
-    <!-- Sostituiamo il tag deprecato con quello corretto -->
+    <!-- Meta tag per app mobile -->
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Il Capriccio Pizzeria">
     
-    <link rel="manifest" href="./manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Il Capriccio Pizzeria | Pizza Artigianale in Sicilia | Tradizione e Innovazione</title>
     
     <!-- Preconnect e preload per migliorare prestazioni -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload script principale -->
+    <link rel="preload" as="script" href="/src/main.tsx">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Il Capriccio Pizzeria",
+      "image": "https://www.ilcapricciopizzeria.it/images/capriccio-pizzeria.jpg",
+      "url": "https://www.ilcapricciopizzeria.it",
+      "telephone": "+39 0931 775382",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "P.ZZA XX SETTEMBRE, 92",
+        "addressLocality": "Canicattini Bagni",
+        "addressRegion": "SR",
+        "postalCode": "96010",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.0342072,
+        "longitude": 15.0584421
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "18:00",
+          "closes": "24:00"
+        }
+      ],
+      "servesCuisine": ["Pizza", "Siciliana", "Napoletana", "Pizza Gourmet"],
+      "priceRange": "€€"
+    }
+    </script>
   </head>
   <body>
-    <noscript>È necessario abilitare JavaScript per visualizzare questo sito.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html> 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes, FaHome, FaUtensils, FaNewspaper, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaUtensils,  FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ReservationModal from "./ReservationModal";
@@ -334,50 +334,7 @@ const Navbar = () => {
                   </motion.div>
                 ))}
                 
-                {/* Link alla sezione Press */}
-                <motion.div 
-                  variants={mobileNavItemVariants}
-                  className="border-b border-gray-100 pb-6"
-                >
-                  <Link
-                    to="/#press"
-                    className="text-pizza-brown hover:text-pizza-red transition-all duration-300 text-2xl font-medium flex items-center group"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsMobileMenuOpen(false);
-                      
-                      if (location.pathname === "/") {
-                        setTimeout(() => {
-                          const pressSection = document.getElementById("press");
-                          if (pressSection) {
-                            pressSection.scrollIntoView({ 
-                              behavior: "smooth",
-                              block: "start"
-                            });
-                          }
-                        }, 100);
-                      } else {
-                        window.location.href = "/#press";
-                      }
-                    }}
-                  >
-                    <span className="text-pizza-red mr-4 text-xl">
-                      <FaNewspaper />
-                    </span>
-                    <span className="relative overflow-hidden">
-                      {t("navbar.press")}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pizza-red group-hover:w-full transition-all duration-300 ease-out"></span>
-                    </span>
-                    <motion.span 
-                      className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ x: -10 }}
-                      animate={{ x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      →
-                    </motion.span>
-                  </Link>
-                </motion.div>
+       
               </div>
               
               {/* Bottone prenotazione */}
