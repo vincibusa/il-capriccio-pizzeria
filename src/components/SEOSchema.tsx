@@ -93,30 +93,30 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type }) => {
     "name": "Il Capriccio Pizzeria",
     "image": "https://ilcapricciopizzeria.it/images/storefront.jpg",
     "url": "https://ilcapricciopizzeria.it",
-    "telephone": "+39 091 611 9472",
+    "telephone": "+39 0931 775382",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Via Isidoro La Lumia, 32",
-      "addressLocality": "Palermo",
-      "postalCode": "90139",
+      "streetAddress": "P.ZZA XX SETTEMBRE, 92",
+      "addressLocality": "Canicattini Bagni",
+      "postalCode": "96010",
       "addressCountry": "IT"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 38.1252,
-      "longitude": 13.3535
+      "latitude": 37.0342072,
+      "longitude": 15.0584421
     },
-    "servesCuisine": ["Sicilian", "Italian", "Pizza"],
+    "servesCuisine": ["Siciliana", "Italiana", "Pizza", "Pizza Gourmet"],
     "priceRange": "€€",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "19:00",
+        "opens": "18:00",
         "closes": "24:00"
       }
     ],
-    "menu": "https://ilcapricciopizzeria.it/menu",
+    "menu": "https://ilcapricciopizzeria.it/menu.pdf",
     "acceptsReservations": "True"
   };
 
@@ -125,7 +125,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type }) => {
     "@context": "https://schema.org",
     "@type": "Menu",
     "name": "Il Capriccio Menu",
-    "mainEntityOfPage": "https://ilcapricciopizzeria.it/menu",
+    "mainEntityOfPage": "https://ilcapricciopizzeria.it/menu.pdf",
     "inLanguage": "it",
     "offers": {
       "@type": "Offer",
@@ -139,20 +139,20 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type }) => {
           {
             "@type": "MenuItem",
             "name": "Margherita",
-            "description": "Pomodoro San Marzano, mozzarella di bufala, basilico fresco",
+            "description": "Pomodoro San Marzano, mozzarella fior di latte, basilico fresco",
             "offers": {
               "@type": "Offer",
-              "price": "8.00",
+              "price": "7.00",
               "priceCurrency": "EUR"
             }
           },
           {
             "@type": "MenuItem",
-            "name": "Capricciosa",
-            "description": "Pomodoro San Marzano, mozzarella di bufala, prosciutto cotto, funghi, carciofi, olive nere",
+            "name": "Pistacchiosa",
+            "description": "Crema di pistacchio, mozzarella fior di latte, mortadella, granella di pistacchio",
             "offers": {
               "@type": "Offer",
-              "price": "10.50",
+              "price": "12.00",
               "priceCurrency": "EUR"
             }
           }
@@ -167,11 +167,11 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type }) => {
     "@type": "BlogPosting",
     "headline": "Tradizione e innovazione alla Pizzeria Il Capriccio",
     "image": "https://ilcapricciopizzeria.it/images/blog-featured.jpg",
-    "datePublished": "2023-11-15",
-    "dateModified": "2023-11-15",
+    "datePublished": "2023-04-14",
+    "dateModified": "2023-04-14",
     "author": {
       "@type": "Person",
-      "name": "Staff Il Capriccio"
+      "name": "Paolo Di Pietro"
     },
     "publisher": {
       "@type": "Organization",
