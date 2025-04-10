@@ -161,9 +161,7 @@ const Footer: React.FC = () => {
           <p className="text-gray-400">
             © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
-          <p className="text-gray-600 text-xs mt-1">
-            <span className="text-pizza-gold">Seguici su:</span> TikTok, Instagram (Canicattini, Avola, Paolo), Facebook, Sky, WiFi
-          </p>
+
         </div>
       </div>
 

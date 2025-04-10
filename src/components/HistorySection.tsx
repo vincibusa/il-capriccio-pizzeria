@@ -336,13 +336,13 @@ const HistorySection: React.FC = () => {
               viewport={{ once: true, amount: 0.3 }}
               whileInView="visible"
               transition={{ delay: 0.5 }}
-              className="absolute inset-0 bg-white rounded-2xl shadow-xl overflow-hidden hover:rotate-0 transition-all duration-500"
+              className="absolute inset-0 bg-transparent rounded-2xl shadow-xl overflow-hidden hover:rotate-0 transition-all duration-500"
             >
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center p-0 overflow-hidden">
                 <OptimizedImage
                   src={molecolaAbout}
                   alt={t("historySection.image.alt")}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full"
                   loading="eager"
                 />
               </div>
