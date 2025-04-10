@@ -51,7 +51,7 @@ const resources = {
       "culinaryPhilosophy.quote": "Una pizza ben preparata è un'arte che bilancia semplicità ed eccellenza - il nostro impegno è onorare i metodi tradizionali mentre deliziamo il vostro palato ad ogni morso.",
       "culinaryPhilosophy.quoteAuthor": "Il Capriccio Pizzeria Team",
       // Footer texts
-      "footer.tagline": "Authentic Sicilian flavors in every bite.",
+      "footer.tagline": "Taste and Tradition in every bite.",
       "footer.description":
         "Our passion for traditional Sicilian pizza is reflected in every dish we serve!",
       "footer.quickLinksHeader": "Quick Links",
@@ -231,9 +231,9 @@ const resources = {
       "culinaryPhilosophy.quote": "La nostra pizza è il risultato di una perfetta fusione di sapori, consistenze ed emozioni. Un'esperienza completa da gustare con tutti i sensi.",
       "culinaryPhilosophy.quoteAuthor": "Team Il Capriccio Pizzeria",
       // Footer texts
-      "footer.tagline": "Innovazione molecolare in ogni morso.",
+      "footer.tagline": "Gusto e Tradizione in ogni morso.",
       "footer.description":
-        "La nostra passione per la sperimentazione della pizza si riflette in ogni piatto che serviamo!",
+        "La nostra passione per la pizza artigianale si riflette in ogni piatto che serviamo!",
       "footer.quickLinksHeader": "Link Rapidi",
       "footer.contactHeader": "Contatti",
       "footer.address.line1": "Via Giuseppe Velasquez, 29/35",
@@ -270,7 +270,7 @@ const resources = {
       "pressSection.readMoreArticles": "Leggi altri articoli",
       // Team gallery texts
       "teamGallerySection.heading": "GALLERIA",
-      "teamGallerySection.viewGallery": "Visualizza Galleria Completa",
+      "teamGallerySection.viewGallery": "Visualizza Gallería Completa",
       "teamGallerySection.description": "Conosci le persone dietro il successo della Pizzeria Il Capriccio. Il nostro talentuoso team lavora insieme per creare esperienze gastronómiche inolvidables a través de la innovación molecular.",
 
       // ReservationModal texts
@@ -409,9 +409,9 @@ const resources = {
       "culinaryPhilosophy.quote": "Una pizza bien preparada es más que comida; es una fusión científica de sabores, texturas y emociones - una experiencia completa para saborear con todos tus sentidos.",
       "culinaryPhilosophy.quoteAuthor": "Equipo de Il Capriccio Pizzeria",
       // Footer texts
-      "footer.tagline": "Innovación molecular en cada bocado.",
+      "footer.tagline": "Sabor y Tradición en cada bocado.",
       "footer.description":
-        "¡Nuestra pasión por la experimentación de la pizza se refleja en cada plato que servimos!",
+        "¡Nuestra pasión por la pizza artesanal se refleja en cada plato que servimos!",
       "footer.quickLinksHeader": "Enlaces Rápidos",
       "footer.contactHeader": "Contacto",
       "footer.address.line1": "Via Giuseppe Velasquez, 29/35",
@@ -587,9 +587,9 @@ const resources = {
       "culinaryPhilosophy.quote": "Une pizza bien préparée est un voyage à travers les saveurs, les textures et les émotions. C'est plus que de la nourriture; c'est une expérience à savourer avec tous vos sens.",
       "culinaryPhilosophy.quoteAuthor": "Les Frères Mirenda",
       // Footer texts
-      "footer.tagline": "Authenticité à chaque bouchée.",
+      "footer.tagline": "Goût et Tradition à chaque bouchée.",
       "footer.description":
-        "Notre passion pour la pizza se reflète dans chaque plat que nous servons !",
+        "Notre passion pour la pizza artisanale se reflète dans chaque plat que nous servons !",
       "footer.quickLinksHeader": "Liens rapides",
       "footer.contactHeader": "Contacts",
       "footer.address.line1": "Via Giuseppe Velasquez, 29",
@@ -759,8 +759,9 @@ const resources = {
       "culinaryPhilosophy.quote": "Eine gut zubereitete Pizza ist eine Reise durch Geschmäcker, Texturen und Emotionen. Es ist mehr als Nahrung; es ist ein Erlebnis, das mit allen Sinnen genossen werden sollte.",
       "culinaryPhilosophy.quoteAuthor": "Die Brüder Mirenda",
       // Footer texts
-      "footer.tagline": "Authentizität in jedem Biss.",
-      "footer.description": "Unsere Leidenschaft für Pizza spiegelt sich in jedem Gericht wider, das wir servieren!",
+      "footer.tagline": "Geschmack und Tradition in jedem Bissen.",
+      "footer.description": 
+        "Unsere Leidenschaft für traditionelle Pizza spiegelt sich in jedem Gericht wider, das wir servieren!",
       "footer.quickLinksHeader": "Schnellzugriffe",
       "footer.contactHeader": "Kontakt",
       "footer.address.line1": "Via Giuseppe Velasquez, 29/35",
