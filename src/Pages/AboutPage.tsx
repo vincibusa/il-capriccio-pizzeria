@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import HistorySection from "../components/HistorySection";
 import CulinaryPhilosophySection from "../components/CulinaryPhilosophySection";
+import LocationSection from "../components/LocationSection";
 import BackToTopButton from "../components/BackToTopButton";
 
 
@@ -45,6 +46,7 @@ const AboutPage: React.FC = () => {
       {/* Contenuto principale */}
       <HistorySection />
       <CulinaryPhilosophySection />
+      <LocationSection />
  
       
   

@@ -31,7 +31,8 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { key: "navbar.home", path: "/" },
-    { key: "navbar.menu", path: "/menu.pdf", external: true }
+    { key: "navbar.menu", path: "/menu.pdf", external: true },
+    { key: "locationSection.title", path: "/#locations" }
   ];
 
   return (
@@ -147,7 +148,7 @@ const Footer: React.FC = () => {
                 <li className="flex items-start">
                   <FaClock className="mr-2 text-pizza-gold mt-1" />
                   <div>
-                    <p className="text-gray-300">Mar - Dom: 19:00 - 24:00</p>
+                    <p className="text-gray-300">Mar - Dom: 18:00 - 24:00</p>
                     <p className="text-gray-300">Lunedì: Chiuso</p>
                   </div>
                 </li>

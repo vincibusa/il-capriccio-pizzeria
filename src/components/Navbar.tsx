@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes, FaHome, FaUtensils, FaNewspaper, FaCalendarAlt } from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaUtensils, FaNewspaper, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ReservationModal from "./ReservationModal";
@@ -75,6 +75,12 @@ const Navbar = () => {
       route: "/menu.pdf", 
       external: true, 
       icon: <FaUtensils /> 
+    },
+    { 
+      key: "locations", 
+      label: t("locationSection.title") || "Dove Siamo", 
+      route: "/#locations", 
+      icon: <FaMapMarkerAlt /> 
     },
   ];
 

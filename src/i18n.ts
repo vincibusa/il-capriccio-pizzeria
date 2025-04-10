@@ -60,7 +60,7 @@ const resources = {
       "footer.address.line2": "90139, Palermo, PA",
       "footer.phone": "Tel: +39 091 611 9472",
       "footer.email": "info@ilcapricciopizzeria.it",
-      "footer.hours.weekdays": "Tuesday-Sunday: 19:00-24:00",
+      "footer.hours.weekdays": "Tuesday-Sunday: 18:00-24:00",
       "footer.hours.monday": "Monday: Closed",
       "footer.copyright":
         "Il Capriccio Pizzeria. All rights reserved.",
@@ -69,6 +69,13 @@ const resources = {
       "footer.newsletter.description": "Get updates about special events, new menu items, and seasonal offers!",
       "footer.newsletter.placeholder": "Your email address",
       "footer.newsletter.button": "Subscribe",
+      // LocationSection texts
+      "locationSection.title": "WHERE ARE WE",
+      "locationSection.subtitle": "Come visit us at one of our two locations to taste our delicious artisan pizzas.",
+      "locationSection.hours": "Opening Hours",
+      "locationSection.contact": "Contacts",
+      "locationSection.directions": "Street Directions",
+      "locationSection.note": "We're waiting for you for an authentic and unforgettable gastronomic experience. For reservations, please contact us by phone.",
       // PressSection texts
       "pressSection.heading": "PRESS & RECOGNITIONS",
       "pressSection.subtitle": "What the critics and food enthusiasts say about our innovative molecular pizza",
@@ -233,7 +240,7 @@ const resources = {
       "footer.address.line2": "90141, Palermo, PA",
       "footer.phone": "Tel: +39 375 5600 247",
       "footer.email": "info@ilcapricciopizzeria.it",
-      "footer.hours.weekdays": "Martedì-Domenica: 19:00-24:00",
+      "footer.hours.weekdays": "Martedì-Domenica: 18:00-24:00",
       "footer.hours.monday": "Lunedì: Chiuso",
       "footer.copyright":
         "Il Capriccio Pizzeria. Tutti i diritti riservati.",
@@ -242,6 +249,13 @@ const resources = {
       "footer.newsletter.description": "Ricevi aggiornamenti su eventi speciali, nuovi piatti e offerte stagionali!",
       "footer.newsletter.placeholder": "Il tuo indirizzo email",
       "footer.newsletter.button": "Iscriviti",
+      // LocationSection texts
+      "locationSection.title": "Dove Siamo",
+      "locationSection.subtitle": "Vieni a trovarci in una delle nostre due sedi per assaporare le nostre deliziose pizze artigianali.",
+      "locationSection.hours": "Orari di Apertura",
+      "locationSection.contact": "Contatti",
+      "locationSection.directions": "Indicazioni Stradali",
+      "locationSection.note": "Ti aspettiamo per un'esperienza gastronomica autentica e indimenticabile. Per prenotazioni, ti invitiamo a contattarci telefonicamente.",
       // PressSection texts
       "pressSection.heading": "RICONOSCIMENTI E PRESS",
       "pressSection.subtitle": "Cosa dicono critici e appassionati di gastronomia sulla nostra innovativa pizza molecolare",
@@ -257,7 +271,7 @@ const resources = {
       // Team gallery texts
       "teamGallerySection.heading": "GALLERIA",
       "teamGallerySection.viewGallery": "Visualizza Galleria Completa",
-      "teamGallerySection.description": "Conosci le persone dietro il successo della Pizzeria Il Capriccio. Il nostro talentuoso team lavora insieme per creare esperienze culinarie indimenticabili attraverso la tradizione e la passione per la pizza siciliana.",
+      "teamGallerySection.description": "Conosci le persone dietro il successo della Pizzeria Il Capriccio. Il nostro talentuoso team lavora insieme per creare esperienze gastronómiche inolvidables a través de la innovación molecular.",
 
       // ReservationModal texts
       "reservationModal.title": "Prenota il tuo tavolo",
@@ -332,19 +346,19 @@ const resources = {
       // Gallery section
       "gallery.preparation": "Preparazione Pizza",
       "gallery.preparation.description": "Impasto artigianale creativo",
-      "gallery.ambiance": "Atmosfera del Locale",
-      "gallery.ambiance.description": "Atmosfera moderna e accogliente",
+      "gallery.ambiance": "Restaurant Ambiance",
+      "gallery.ambiance.description": "Modern and welcoming atmosphere",
       "gallery.oven": "Forno a Legna",
-      "gallery.oven.description": "Metodi di cottura tradizionali",
-      "gallery.pizza": "Pizza Speciale",
-      "gallery.pizza.description": "Creazioni innovative",
+      "gallery.oven.description": "Traditional cooking methods",
+      "gallery.pizza": "Molecular Pizza",
+      "gallery.pizza.description": "Innovative creations",
       
       // Gallery categories
-      "gallery.categories.all": "Tutti",
-      "gallery.categories.pizza": "Pizze",
-      "gallery.categories.ingredients": "Ingredienti",
-      "gallery.categories.restaurant": "Ristorante",
-      "gallery.categories.preparation": "Preparazione",
+      "gallery.categories.all": "All",
+      "gallery.categories.pizza": "Pizzas",
+      "gallery.categories.ingredients": "Ingredients",
+      "gallery.categories.restaurant": "Restaurant",
+      "gallery.categories.preparation": "Preparation",
       "gallery.description": "Scopri la nostra passione per la pizza attraverso immagini del nostro locale, dei piatti e dei metodi di preparazione."
     },
   },
@@ -413,6 +427,13 @@ const resources = {
       "footer.newsletter.description": "¡Recibe actualizaciones sobre eventos especiales, nuevos platos y ofertas de temporada!",
       "footer.newsletter.placeholder": "Tu dirección de correo electrónico",
       "footer.newsletter.button": "Suscribirse",
+      // LocationSection texts
+      "locationSection.title": "DOVE SIAMO",
+      "locationSection.subtitle": "Vieni a trovarci in una delle nostre due sedi per assaporare le nostre deliziose pizze artigianali.",
+      "locationSection.hours": "Orari di Apertura",
+      "locationSection.contact": "Contatti",
+      "locationSection.directions": "Indicazioni Stradali",
+      "locationSection.note": "Ti aspettiamo per un'esperienza gastronomica autentica e indimenticabile. Per prenotazioni, ti invitiamo a contattarci telefonicamente.",
       // PressSection texts
       "pressSection.heading": "PRENSA Y RECONOCIMIENTOS",
       "pressSection.subtitle": "Lo que dicen los críticos y entusiastas gastronómicos sobre nuestra innovadora pizza molecular",
@@ -427,7 +448,7 @@ const resources = {
       "pressSection.readMoreArticles": "Leer más artículos",
       // Team gallery texts
       "teamGallerySection.heading": "GALERÍA",
-      "teamGallerySection.viewGallery": "Ver Galería Completa",
+      "teamGallerySection.viewGallery": "Visualizza Gallería Completa",
       "teamGallerySection.description": "Conoce a las personas detrás del éxito de Il Capriccio Pizzeria. Nuestro talentoso equipo trabaja junto para crear experiencias gastronómicas inolvidables a través de la innovación molecular.",
 
       // ReservationModal texts
@@ -584,6 +605,13 @@ const resources = {
       "footer.newsletter.description": "Recevez des mises à jour sur les événements spéciaux, les nouveaux plats et les offres saisonnières !",
       "footer.newsletter.placeholder": "Votre adresse e-mail",
       "footer.newsletter.button": "S'abonner",
+      // LocationSection texts
+      "locationSection.title": "DOVE SIAMO",
+      "locationSection.subtitle": "Vieni a trovarci in una delle nostre due sedi per assaporare le nostre deliziose pizze artigianali.",
+      "locationSection.hours": "Orari di Apertura",
+      "locationSection.contact": "Contatti",
+      "locationSection.directions": "Indicazioni Stradali",
+      "locationSection.note": "Ti aspettiamo per un'esperienza gastronomica autentica e indimenticabile. Per prenotazioni, ti invitiamo a contattarci telefonicamente.",
       // PressSection texts
       "pressSection.heading": "RECONNAISSANCES ET PRESSE",
       "pressSection.subtitle": "Ce que disent les critiques et les amateurs de gastronomie sur notre pizza moléculaire innovante",
@@ -675,7 +703,7 @@ const resources = {
       "gallery.preparation": "Préparation de la Pizza",
       "gallery.preparation.description": "Façonnage artisanal de la pâte",
       "gallery.ambiance": "Ambiance du Restaurant",
-      "gallery.ambiance.description": "Atmosphère moderne et accueillante",
+      "gallery.ambiance.description": "Moderne et einladende Atmosphäre",
       "gallery.oven": "Four à Bois",
       "gallery.oven.description": "Méthodes de cuisson traditionnelles",
       "gallery.pizza": "Pizza Moléculaire",
@@ -739,7 +767,7 @@ const resources = {
       "footer.address.line2": "90141, Palermo, PA",
       "footer.phone": "Tel: +39 375 5600 247",
       "footer.email": "info@ilcapricciopizzeria.it",
-      "footer.hours.weekdays": "Dienstag-Sonntag: 19:00-24:00",
+      "footer.hours.weekdays": "Dienstag-Sonntag: 18:00-24:00",
       "footer.hours.monday": "Montag: Geschlossen",
       "footer.copyright": "Il Capriccio Pizzeria. Alle Rechte vorbehalten.",
       "footer.about": "Über Uns",
@@ -747,6 +775,13 @@ const resources = {
       "footer.newsletter.description": "Erhalten Sie Updates über spezielle Events, neue Menüpunkte und saisonale Angebote!",
       "footer.newsletter.placeholder": "Ihre E-Mail-Adresse",
       "footer.newsletter.button": "Abonnieren",
+      // LocationSection texts
+      "locationSection.title": "DOVE SIAMO",
+      "locationSection.subtitle": "Vieni a trovarci in una delle nostre due sedi per assaporare le nostre deliziose pizze artigianali.",
+      "locationSection.hours": "Orari di Apertura",
+      "locationSection.contact": "Contatti",
+      "locationSection.directions": "Indicazioni Stradali",
+      "locationSection.note": "Ti aspettiamo per un'esperienza gastronomica autentica e indimenticabile. Per prenotazioni, ti invitiamo a contattarci telefonicamente.",
       // PressSection texts
       "pressSection.heading": "Presse & Auszeichnungen",
       "pressSection.subtitle": "Was Kritiker und Feinschmecker über unsere innovative molekulare Pizza sagen",
@@ -757,7 +792,7 @@ const resources = {
       "pressSection.leftArticle.source": "SiciliaGourmet - Dezember 2023",
       "pressSection.article.readMore": "Artikel komplett lesen",
       "pressSection.readMoreArticles": "Weitere Artikel lesen",
-      // Team Gallery texts
+      // Team gallery texts
       "teamGallerySection.heading": "GALERIE",
       "teamGallerySection.viewGallery": "Vollständige Galerie anzeigen",
       "teamGallerySection.description": "Conosci le persone dietro il successo della Pizzeria Il Capriccio. Il nostro talentuoso team lavora insieme per creare esperienze culinarie indimenticabili attraverso la tradizione e la passione per la pizza siciliana.",
