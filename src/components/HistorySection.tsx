@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
 import molecolaAbout from "../assets/capriccioAbout.jpeg";
@@ -7,8 +7,30 @@ import OptimizedImage from "./OptimizedImage";
 
 const HistorySection: React.FC = () => {
   const { t } = useTranslation();
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [imageHeight, setImageHeight] = useState<number>(0);
   
-
+  // Aggiungiamo un effetto per misurare l'altezza dell'immagine
+  useEffect(() => {
+    const updateHeight = () => {
+      if (imageRef.current) {
+        setImageHeight(imageRef.current.offsetHeight);
+      }
+    };
+    
+    // Inizialmente impostiamo un tempo per assicurarci che l'immagine sia caricata
+    const timer = setTimeout(() => {
+      updateHeight();
+    }, 300);
+    
+    // Aggiorniamo anche al ridimensionamento
+    window.addEventListener('resize', updateHeight);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
   
   const fadeInUp = {
     hidden: { 
@@ -102,15 +124,7 @@ const HistorySection: React.FC = () => {
     }
   };
   
-  const scaleInImage = {
-    hidden: { 
-      scale: 1.1 
-    },
-    visible: { 
-      scale: 1, 
-      transition: { duration: 0.8 } 
-    }
-  };
+
   
   const captionVariant = {
     hidden: { 
@@ -171,10 +185,14 @@ const HistorySection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             whileInView="visible"
             transition={{ delay: 0.2 }}
-            className="space-y-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-lg"
+            className="space-y-6 bg-white bg-opacity-90 p-8 rounded-xl shadow-lg flex flex-col"
+            style={{ 
+              height: imageHeight > 0 ? `${imageHeight}px` : 'auto',
+              width: imageRef.current ? `${imageRef.current.offsetWidth}px` : 'auto'
+            }}
           >
             {/* Testi lunghi per desktop con animazioni a cascata */}
-            <div className="hidden lg:block space-y-6">
+            <div className="hidden lg:block space-y-6 flex-grow overflow-y-auto pr-2">
               <motion.p 
                 variants={textParaLeft}
                 initial="hidden"
@@ -214,10 +232,33 @@ const HistorySection: React.FC = () => {
                   components={{ b: <span className="text-pizza-red font-medium hover:scale-105 inline-block transition-transform" /> }}
                 />
               </motion.p>
+              <motion.p 
+                variants={textParaLeft}
+                initial="hidden"
+                viewport={{ once: true, amount: 0.3 }}
+                whileInView="visible"
+                transition={{ delay: 0.9 }}
+                className="text-gray-700 text-lg font-montserrat leading-relaxed italic"
+              >
+                "<Trans
+                  i18nKey="historySection.quote"
+                  components={{ b: <span className="text-pizza-red font-medium hover:scale-105 inline-block transition-transform" /> }}
+                />"
+              </motion.p>
+              <motion.p 
+                variants={textParaLeft}
+                initial="hidden"
+                viewport={{ once: true, amount: 0.3 }}
+                whileInView="visible"
+                transition={{ delay: 1.0 }}
+                className="text-gray-700 text-right text-sm font-montserrat"
+              >
+                - Paolo Di Pietro
+              </motion.p>
             </div>
 
             {/* Testi brevi per mobile con animazioni a cascata */}
-            <div className="block lg:hidden space-y-4">
+            <div className="block lg:hidden space-y-4 overflow-y-auto pr-2">
               <motion.p 
                 variants={textParaLeft}
                 initial="hidden"
@@ -244,17 +285,41 @@ const HistorySection: React.FC = () => {
                   components={{ b: <span className="text-pizza-red font-medium" /> }}
                 />
               </motion.p>
+              <motion.p 
+                variants={textParaLeft}
+                initial="hidden"
+                viewport={{ once: true, amount: 0.3 }}
+                whileInView="visible"
+                transition={{ delay: 0.7 }}
+                className="text-gray-700 text-base font-montserrat leading-relaxed italic"
+              >
+                "<Trans
+                  i18nKey="historySection.quote"
+                  components={{ b: <span className="text-pizza-red font-medium" /> }}
+                />"
+              </motion.p>
+              <motion.p 
+                variants={textParaLeft}
+                initial="hidden"
+                viewport={{ once: true, amount: 0.3 }}
+                whileInView="visible"
+                transition={{ delay: 0.8 }}
+                className="text-gray-700 text-right text-sm font-montserrat"
+              >
+                - Paolo Di Pietro
+              </motion.p>
             </div>
           </motion.div>
 
           {/* Immagine con animazioni potenziate e ottimizzate per mobile - entrata da destra */}
           <motion.div 
+            ref={imageRef}
             variants={slideInRight}
             initial="hidden"
             viewport={{ once: true, amount: 0.3 }}
             whileInView="visible"
             transition={{ delay: 0.3 }}
-            className="relative h-[300px] md:h-[500px] w-full"
+            className="relative w-full h-[500px] md:h-[600px]"
           >
             {/* Effetti con stratificazione animati */}
             <motion.div 
@@ -273,20 +338,14 @@ const HistorySection: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="absolute inset-0 bg-white rounded-2xl shadow-xl overflow-hidden hover:rotate-0 transition-all duration-500"
             >
-              <motion.div
-                variants={scaleInImage}
-                initial="hidden"
-                viewport={{ once: true, amount: 0.3 }}
-                whileInView="visible"
-                className="w-full h-full"
-              >
+              <div className="w-full h-full flex items-center justify-center">
                 <OptimizedImage
                   src={molecolaAbout}
                   alt={t("historySection.image.alt")}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                   loading="eager"
                 />
-              </motion.div>
+              </div>
             </motion.div>
             
             {/* Didascalia con animazione potenziata */}

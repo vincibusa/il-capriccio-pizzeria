@@ -241,7 +241,7 @@ const Navbar = () => {
                   >
                     <motion.button
                       onClick={() => setIsReservationModalOpen(true)}
-                      className="pizza-btn bg-pizza-gold text-black px-5 py-2 rounded-md shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
+                      className="pizza-btn bg-pizza-gold text-black px-5 py-2  shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
                       whileHover={{ 
                         scale: 1.03,
                         transition: { duration: 0.2 }
@@ -384,7 +384,7 @@ const Navbar = () => {
                     setIsReservationModalOpen(true);
                     setIsMobileMenuOpen(false);
                   }}
-                  className="pizza-btn bg-pizza-red text-white px-8 py-4 rounded-md shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center w-full touch-manipulation"
+                  className="pizza-btn bg-pizza-red text-white px-8 py-4  shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center w-full touch-manipulation"
                 >
                   <FaCalendarAlt className="mr-2" />
                   <span className="font-montserrat font-medium">{t("reservationButton")}</span>

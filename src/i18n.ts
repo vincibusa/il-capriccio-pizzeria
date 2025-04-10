@@ -18,15 +18,17 @@ const resources = {
       // HistorySection texts
       "historySection.title": "OUR STORY",
       "historySection.paragraph1":
-        "In the heart of Palermo, Il Capriccio welcomes you to an authentic Sicilian culinary experience. Founded with the passion for traditional pizza making, our restaurant combines time-honored techniques with the finest local ingredients.",
+        "Il Capriccio opens its doors in Canicattini Bagni: a journey through flavors and traditions. The world of gastronomy is enriched with a new star: on April 14, Canicattini Bagni, in the province of Syracuse, will welcome the second location of \"Il Capriccio\", the famous pizzeria born in Avola in February 2021. An important milestone for Paolo Di Pietro, the beating heart of this adventure, who with love and passion has conquered the palates of pizza lovers, becoming a real reference point in the region.",
       "historySection.paragraph2":
-        "Our <b>pizzas</b> are crafted following authentic Sicilian traditions. Using a <b>special mix of flours</b> and our unique dough fermentation process, we create a light, digestible crust with a distinctive flavor that has become our signature. Each pizza tells a <b>gastronomic story</b> of Sicily's rich culinary heritage.",
+        "The pizzas of \"Il Capriccio\" are a celebration of Sicilian and Neapolitan culinary tradition, a perfect blend of flavors that makes every bite a unique experience. But it's the <b>pistachio specialty</b> and <b>gourmet pizzas</b> that make the restaurant shine, making it an icon for those looking for not just a simple pizza, but a <b>gastronomic journey</b> that tells stories and emotions.",
       "historySection.paragraph3":
-        "We take pride in selecting only <b>premium quality ingredients</b> from local Sicilian producers. From the sweet San Marzano tomatoes to the creamy Bufala mozzarella and fragrant local herbs, every component is chosen to ensure an unforgettable dining experience.",
+        "The inauguration of this new adventure will be an unmissable event, full of surprises and unforgettable moments. Among the special guests, there will be actor Tony Sperandeo, who will bring his charisma and his presence to make the evening even more special. Don't miss the opportunity to taste the specialties of Il Capriccio, to meet Paolo and to celebrate this new opening. The Canicattini Bagni location also expands its kitchen as a restaurant, already experiencing great success with Easter lunch being SOLD OUT in just 24 hours.",
+      "historySection.quote":
+        "Make people discover the true taste of pizza and bring a piece of Naples to everyone's heart.",
       "historySection.shortParagraph1":
-        "In the heart of Palermo, Il Capriccio welcomes you to an authentic Sicilian culinary experience where traditional pizza-making meets premium local ingredients.",
+        "Il Capriccio opens its doors in Canicattini Bagni: a journey through flavors and traditions. An important milestone for Paolo Di Pietro, the beating heart of this adventure, who with love and passion has conquered the palates of pizza lovers since the first location opened in Avola in February 2021.",
       "historySection.shortParagraph2":
-        "In a venue with a modern style and personal character, the <b>pizza</b> offered speaks a contemporary language. The unique light dough satisfies even the most demanding palates, doing justice to the <b>high-quality ingredients</b>. Not just a pizza but a <b>gastronomic story</b> that brings all the flavors of Sicily to the table.",
+        "The pizzas of \"Il Capriccio\" are a celebration of Sicilian and Neapolitan culinary tradition, a perfect blend of flavors with specialties like the <b>pistachio pizza</b> and various <b>gourmet options</b>. The Canicattini Bagni location also expands as a <b>full restaurant</b>, already experiencing great success.",
       "historySection.image.alt": "Il Capriccio Pizzeria Team",
       "historySection.image.caption": "The team behind Il Capriccio Pizzeria",
       // Cookie consent texts
@@ -35,15 +37,15 @@ const resources = {
       "cookieConsent.acceptAll": "Accept All",
       "cookieConsent.acceptEssential": "Only Essential",
       // CulinaryPhilosophySection texts
-      "culinaryPhilosophy.item1.title": "Servizio e Ospitalità",
+      "culinaryPhilosophy.item1.title": "Servizio e accoglienza",
       "culinaryPhilosophy.item1.description":
-        "Ci piace prendersi cura dei nostri clienti con calore e professionalità",
-      "culinaryPhilosophy.item2.title": "Ingredienti di Qualità",
+        "Amiamo prenderci cura dei nostri clienti con calore e professionalità, offrendo un'esperienza di gusto indimenticabile in un ambiente accogliente",
+      "culinaryPhilosophy.item2.title": "Ingredienti di qualità",
       "culinaryPhilosophy.item2.description":
         "Selezioniamo le migliori farine e i migliori prodotti stagionali siciliani",
-      "culinaryPhilosophy.item3.title": "Abbinamenti Perfetti",
+      "culinaryPhilosophy.item3.title": "Abbinamenti perfetti",
       "culinaryPhilosophy.item3.description":
-        "La nostra carta dei vini offre molte scelte, con particolare attenzione ai vini siciliani",
+        "Studiamo gli ingredienti e creiamo abbinamenti perfetti per esaltare i sapori",
       "culinaryPhilosophy.title": "LA NOSTRA FILOSOFIA CULINARIA",
       "culinaryPhilosophy.subtitle": "Crediamo che una pizza eccezionale nasca dalla passione, dalla tradizione e dai migliori ingredienti siciliani.",
       "culinaryPhilosophy.quote": "Una pizza ben preparata è un'arte che bilancia semplicità ed eccellenza - il nostro impegno è onorare i metodi tradizionali mentre deliziamo il vostro palato ad ogni morso.",
@@ -118,6 +120,9 @@ const resources = {
       "reservationModal.emailPlaceholder": "Enter your email",
       "reservationModal.error.emailRequired": "Email is required",
       "reservationModal.error.emailInvalid": "Please enter a valid email",
+      "reservationModal.locationLabel": "Location",
+      "reservationModal.locationPlaceholder": "Select location",
+      "reservationModal.error.locationRequired": "Location is required",
 
       // Hero Section / VideoBackground
       "heroSection.subtitle": "A unique experience of taste and innovation in the heart of Palermo",
@@ -186,15 +191,17 @@ const resources = {
       // HistorySection texts
       "historySection.title": "LA NOSTRA STORIA",
       "historySection.paragraph1":
-        "Nel cuore di Palermo, Il Capriccio vi accoglie per un'autentica esperienza culinaria siciliana. Fondato con la passione per la pizza tradizionale, il nostro ristorante combina tecniche tramandate nel tempo con i migliori ingredienti locali.",
+        "Il Capriccio apre le porte a Canicattini Bagni: un viaggio tra sapori e tradizioni. Il mondo della gastronomia si arricchisce di una nuova stella: il 14 aprile, Canicattini Bagni, in provincia di Siracusa, accoglierà la seconda sede de \"Il Capriccio\", la celebre pizzeria nata ad Avola nel febbraio del 2021. Un traguardo importante per Paolo Di Pietro, il cuore pulsante di questa avventura, che con amore e passione ha saputo conquistare i palati degli amanti della pizza, diventando un vero e proprio punto di riferimento nella regione.",
       "historySection.paragraph2":
-        "Le nostre <b>pizze</b> sono preparate seguendo autentiche tradizioni siciliane. Utilizzando un <b>mix speciale di farine</b> e il nostro esclusivo processo di fermentazione dell'impasto, creiamo una crosta leggera e digeribile con un sapore distintivo che è diventato la nostra firma. Ogni pizza racconta una <b>storia gastronomica</b> della ricca tradizione culinaria siciliana.",
+        "Le pizze de \"Il Capriccio\" sono una celebrazione della tradizione culinaria siciliana e napoletana, un perfetto connubio di sapori che rende ogni morso un'esperienza unica. Ma è la specialità al <b>pistacchio</b> e le <b>pizze gourmet</b> a far brillare il ristorante, rendendolo un'icona per chi cerca non solo una semplice pizza, ma un <b>viaggio gastronomico</b> che racconta storie e emozioni.",
       "historySection.paragraph3":
-        "Siamo orgogliosi di selezionare solo <b>ingredienti di prima qualità</b> dai produttori locali siciliani. Dai dolci pomodori San Marzano alla cremosa mozzarella di bufala e alle fragranti erbe locali, ogni componente è scelto per garantire un'esperienza culinaria indimenticabile.",
+        "L'inaugurazione di questa nuova avventura sarà un evento imperdibile, ricco di sorprese e momenti indimenticabili. Tra gli ospiti d'eccezione, ci sarà l'attore Tony Sperandeo, che porterà il suo carisma e la sua presenza per rendere la serata ancora più speciale. Non perdere l'occasione di assaporare le specialità del Capriccio, di incontrare Paolo e di festeggiare questa nuova apertura. Nella sede di Canicattini Bagni, Il Capriccio amplia la sua cucina anche come ristorante, riscontrando prima ancora dell'apertura già un grande successo con il pranzo di Pasqua andato SOLDOUT in sole 24 Ore.",
+      "historySection.quote":
+        "Far scoprire il vero gusto della pizza e portare un pezzo di Napoli nel cuore di tutti.",
       "historySection.shortParagraph1":
-        "Nel cuore di Palermo, Il Capriccio vi accoglie per un'autentica esperienza culinaria siciliana dove la tradizionale preparazione della pizza incontra ingredienti locali di prima qualità.",
+        "Il Capriccio apre le porte a Canicattini Bagni: un viaggio tra sapori e tradizioni. Un traguardo importante per Paolo Di Pietro, il cuore pulsante di questa avventura, che ha saputo conquistare i palati con la prima sede aperta ad Avola nel febbraio del 2021.",
       "historySection.shortParagraph2":
-        "In un locale dallo stile moderno e dal carattere personale, la <b>pizza</b> proposta parla un linguaggio contemporaneo. La pâte unique et légère satisfait même les palais les plus exigeants, rendant hommage aux <b>ingrédients de haute qualité</b>. Ce n'est pas une simple pizza mais une <b>histoire gustative</b> qui apporte à table toutes les saveurs de la Sicile.",
+        "Le pizze de \"Il Capriccio\" sono una celebrazione della tradizione culinaria siciliana e napoletana, con specialità come la pizza al <b>pistacchio</b> e varie <b>opzioni gourmet</b>. La sede di Canicattini Bagni si espande anche come <b>ristorante completo</b>, riscontrando già un grande successo.",
       "historySection.image.alt": "Team Il Capriccio Pizzeria",
       "historySection.image.caption": "Il team di Il Capriccio Pizzeria",
       // Cookie consent texts
@@ -205,16 +212,16 @@ const resources = {
       // CulinaryPhilosophySection texts
       "culinaryPhilosophy.item1.title": "Servizio e accoglienza",
       "culinaryPhilosophy.item1.description":
-        "Amiamo prenderci cura dei nostri clienti",
+        "Amiamo prenderci cura dei nostri clienti con calore e professionalità",
       "culinaryPhilosophy.item2.title": "Ingredienti di qualità",
       "culinaryPhilosophy.item2.description":
-        "We select the best flours and choose the finest seasonal products",
+        "Selezioniamo le migliori farine e i migliori prodotti stagionali siciliani",
       "culinaryPhilosophy.item3.title": "Abbinamenti perfetti",
       "culinaryPhilosophy.item3.description":
-        "Studiamo gli ingredienti e creiamo abbinamenti perfetti",
+        "Studiamo gli ingredienti e creiamo abbinamenti perfetti per esaltare i sapori",
       "culinaryPhilosophy.title": "IL NOSTRO CONCEPT",
       "culinaryPhilosophy.subtitle": "Lavoriamo con passione ed attenzione, studiando i prodotti e trasformando la materia per esaltare il gusto di ogni ingrediente.",
-      "culinaryPhilosophy.quote": "La nostra pizza molecolare è il risultato di una fusione scientifica di sapori, consistenze ed emozioni. Un'esperienza completa da gustare con tutti i sensi.",
+      "culinaryPhilosophy.quote": "La nostra pizza è il risultato di una perfetta fusione di sapori, consistenze ed emozioni. Un'esperienza completa da gustare con tutti i sensi.",
       "culinaryPhilosophy.quoteAuthor": "Team Il Capriccio Pizzeria",
       // Footer texts
       "footer.tagline": "Innovazione molecolare in ogni morso.",
@@ -286,9 +293,12 @@ const resources = {
       "reservationModal.emailPlaceholder": "Inserisci la tua email",
       "reservationModal.error.emailRequired": "L'email è obbligatoria",
       "reservationModal.error.emailInvalid": "Inserisci un'email valida",
+      "reservationModal.locationLabel": "Località",
+      "reservationModal.locationPlaceholder": "Seleziona località",
+      "reservationModal.error.locationRequired": "La località è obbligatoria",
 
       // Hero Section / VideoBackground
-      "heroSection.subtitle": "Un'esperienza unica di gusto e innovazione nel cuore di Palermo",
+      "heroSection.subtitle": "Un'esperienza unica di gusto e innovazione nel cuore della Sicilia",
       "scrollDown": "Scorri Giù",
       
       // Gallery Page
@@ -323,10 +333,10 @@ const resources = {
       "gallery.preparation": "Preparazione Pizza",
       "gallery.preparation.description": "Impasto artigianale creativo",
       "gallery.ambiance": "Atmosfera del Locale",
-      "gallery.ambiance.description": "Modern and welcoming atmosphere",
+      "gallery.ambiance.description": "Atmosfera moderna e accogliente",
       "gallery.oven": "Forno a Legna",
       "gallery.oven.description": "Metodi di cottura tradizionali",
-      "gallery.pizza": "Pizza Molecolare",
+      "gallery.pizza": "Pizza Speciale",
       "gallery.pizza.description": "Creazioni innovative",
       
       // Gallery categories
@@ -335,7 +345,7 @@ const resources = {
       "gallery.categories.ingredients": "Ingredienti",
       "gallery.categories.restaurant": "Ristorante",
       "gallery.categories.preparation": "Preparazione",
-      "gallery.description": "Scopri la nostra passione per la pizza molecolare attraverso immagini del nostro locale, dei piatti e dei metodi di preparazione."
+      "gallery.description": "Scopri la nostra passione per la pizza attraverso immagini del nostro locale, dei piatti e dei metodi di preparazione."
     },
   },
   es: {
@@ -410,7 +420,7 @@ const resources = {
       "pressSection.leftArticle.title":
         "Premiados por la Innovación en la Elaboración de Pizza Siciliana con Técnicas Moleculares",
       "pressSection.leftArticle.preview":
-        "Il Capriccio Pizzeria en Palermo ha sido reconocida por su enfoque innovante en la elaboración de pizzas utilizando técnicas de gastronomía molecular. Su creativo menú que incluye elementos como 'Il Capriccio Fluorescente' y 'Tres Consistencias de Quesos' ha captado la atención de críticos gastronómicos y entusiastas, elogiando su dedicación para superar los límites de la pizza tradicional.",
+        "Il Capriccio Pizzeria en Palermo ha sido reconocida por su enfoque innovante en la elaboración de pizzas utilizando técnicas de gastronomía molecular. Su creativo menú que incluye elementos como 'Il Capriccio Fluorescente' y 'Tres Consistencias de Quesos' ha captado la atención de críticos gastronomiques y entusiastas, elogiando su dedicación para superar los límites de la pizza tradicional.",
       "pressSection.leftArticle.imageAlt": "Premio de Innovación Il Capriccio",
       "pressSection.leftArticle.source": "SiciliaGourmet - Diciembre 2023",
       "pressSection.article.readMore": "Leer artículo completo",
@@ -454,6 +464,9 @@ const resources = {
       "reservationModal.emailPlaceholder": "Ingresa tu email",
       "reservationModal.error.emailRequired": "El email es obligatorio",
       "reservationModal.error.emailInvalid": "Por favor ingresa un email válido",
+      "reservationModal.locationLabel": "Ubicación",
+      "reservationModal.locationPlaceholder": "Selecciona ubicación",
+      "reservationModal.error.locationRequired": "La ubicación es obligatoria",
 
       // Hero Section / VideoBackground
       "heroSection.subtitle": "Una experiencia única de sabor e innovación en el corazón de Palermo",
@@ -493,7 +506,7 @@ const resources = {
       "gallery.ambiance": "Ambiente del Restaurante",
       "gallery.ambiance.description": "Atmósfera moderna y acogedora",
       "gallery.oven": "Horno de Leña",
-      "gallery.oven.description": "Métodos de cocción tradicionales",
+      "gallery.oven.description": "Métodos de cuisson traditionnelles",
       "gallery.pizza": "Pizza Molecular",
       "gallery.pizza.description": "Creaciones innovantes",
       
@@ -622,9 +635,12 @@ const resources = {
       "reservationModal.emailPlaceholder": "Entrez votre email",
       "reservationModal.error.emailRequired": "E-Mail est requis",
       "reservationModal.error.emailInvalid": "Veuillez entrer une adresse email valide",
+      "reservationModal.locationLabel": "Emplacement",
+      "reservationModal.locationPlaceholder": "Sélectionner l'emplacement",
+      "reservationModal.error.locationRequired": "L'emplacement est requis",
 
       // Hero Section / VideoBackground
-      "heroSection.subtitle": "Une expérience unique de goût et innovation au cœur de Palerme",
+      "heroSection.subtitle": "Une expérience unique de goût et innovation au cœur de Palermo",
       "scrollDown": "Défiler vers le bas",
       
       // Gallery Page
@@ -692,8 +708,8 @@ const resources = {
       "historySection.paragraph1": "Im Herzen des Zentrums von Palermo, nur wenige Schritte vom Politeama-Platz entfernt, ist Il Capriccio das innovative Projekt, das mit dem Ziel gegründet wurde, ein einzigartiges Geschmacks- und Experimentiererlebnis rund um molekulare Pizza zu bieten.",
       "historySection.paragraph2": "In einem Lokal mit modernem Stil und persönlichem Charakter spricht die <b>Pizza</b> eine zeitgenössische Sprache. Aus einer <b>Mischung ausgewählter Mehle</b> mit einem speziellen Fermentationsprozess entsteht ein leichter Teig mit einzigartiger Textur, der selbst die anspruchsvollsten Gaumen zufriedenstellt. Es ist nicht nur eine Pizza, sondern eine <b>geschmackliche Geschichte</b>, die alle Aromen Siziliens auf den Tisch bringt.",
       "historySection.paragraph3": "Alternative Optionen sind verfügbar, wie der <b>Crunch</b> mit seiner charakteristischen Knusprigkeit oder die <b>Padellini</b>, bei denen spezielle Techniken zur Teigzubereitung vor dem Backen und Belegen verwendet werden, um den <b>hochwertigen Zutaten</b>, die sorgfältig von lokalen Produzenten ausgewählt wurden, gerecht zu werden.",
-      "historySection.shortParagraph1": "Im Herzen des Zentrums von Palermo, nur wenige Schritte vom Politeama-Platz entfernt, ist Il Capriccio das innovative Projekt, das mit dem Ziel gegründet wurde, ein einzigartiges Geschmacks- und Experimentiererlebnis rund um molekulare Pizza zu bieten.",
-      "historySection.shortParagraph2": "In einem Lokal mit modernem Stil und persönlichem Charakter spricht die <b>Pizza</b> eine zeitgenössische Sprache. Der einzigartige, leichte Teig überzeugt selbst die anspruchsvollsten Gaumen und wird den <b>hochwertigen Zutaten</b> gerecht. Es ist nicht nur eine Pizza, sondern eine <b>geschmackliche Geschichte</b>, die alle Aromen Siziliens auf den Tisch bringt.",
+      "historySection.shortParagraph1": "Il Capriccio apre le porte a Canicattini Bagni: un viaggio tra sapori e tradizioni. Un traguardo importante per Paolo Di Pietro, il cuore pulsante di questa avventura, che ha saputo conquistare i palati con la prima sede aperta ad Avola nel febbraio del 2021.",
+      "historySection.shortParagraph2": "Le pizze de \"Il Capriccio\" sono una celebrazione della tradizione culinaria siciliana e napoletana, con specialità come la pizza al <b>pistacchio</b> e varie <b>opzioni gourmet</b>. La sede di Canicattini Bagni si espande anche come <b>ristorante completo</b>, riscontrando già un grande successo.",
       "historySection.image.alt": "Team von Il Capriccio Pizzeria",
       "historySection.image.caption": "Das Team von Il Capriccio Pizzeria",
       // Cookie consent texts
@@ -701,12 +717,15 @@ const resources = {
       "cookieConsent.acceptAll": "Alle akzeptieren",
       "cookieConsent.acceptEssential": "Nur essenzielle",
       // CulinaryPhilosophySection texts
-      "culinaryPhilosophy.item1.title": "Service und Gastfreundschaft",
-      "culinaryPhilosophy.item1.description": "Wir lieben es, uns um unsere Kunden zu kümmern.",
-      "culinaryPhilosophy.item2.title": "Qualitätszutaten",
-      "culinaryPhilosophy.item2.description": "Wir wählen die besten Mehle aus und verwenden die hochwertigsten saisonalen Produkte.",
-      "culinaryPhilosophy.item3.title": "Perfekte Kombinationen",
-      "culinaryPhilosophy.item3.description": "Unsere Weinkarte bietet zahlreiche Optionen, nicht nur regionale.",
+      "culinaryPhilosophy.item1.title": "Servizio e accoglienza",
+      "culinaryPhilosophy.item1.description":
+        "Amiamo prenderci cura dei nostri clienti con calore e professionalità, offrendo un'esperienza di gusto indimenticabile in un ambiente accogliente",
+      "culinaryPhilosophy.item2.title": "Ingredienti di qualità",
+      "culinaryPhilosophy.item2.description":
+        "Selezioniamo le migliori farine e i migliori prodotti stagionali siciliani",
+      "culinaryPhilosophy.item3.title": "Abbinamenti perfetti",
+      "culinaryPhilosophy.item3.description":
+        "Studiamo gli ingredienti e creiamo abbinamenti perfetti per esaltare i sapori",
       "culinaryPhilosophy.title": "UNSERE KULINARISCHE PHILOSOPHIE",
       "culinaryPhilosophy.subtitle": "Wir glauben, dass außergewöhnliche Pizza aus Leidenschaft, Tradition und den besten Zutaten entsteht.",
       "culinaryPhilosophy.quote": "Eine gut zubereitete Pizza ist eine Reise durch Geschmäcker, Texturen und Emotionen. Es ist mehr als Nahrung; es ist ein Erlebnis, das mit allen Sinnen genossen werden sollte.",
@@ -777,6 +796,9 @@ const resources = {
       "reservationModal.emailPlaceholder": "Geben Sie Ihre E-Mail ein",
       "reservationModal.error.emailRequired": "E-Mail ist erforderlich",
       "reservationModal.error.emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "reservationModal.locationLabel": "Standort",
+      "reservationModal.locationPlaceholder": "Standort auswählen",
+      "reservationModal.error.locationRequired": "Standort ist erforderlich",
 
       // Hero Section / VideoBackground
       "heroSection.subtitle": "Ein einzigartiges Geschmacks- und Innovationserlebnis im Herzen von Palermo",
@@ -817,7 +839,7 @@ const resources = {
       "gallery.ambiance.description": "Moderne und einladende Atmosphäre",
       "gallery.oven": "Holzofen",
       "gallery.oven.description": "Traditionelle Garmethoden",
-      "gallery.pizza": "Molekulare Pizza",
+      "gallery.pizza": "Spezial-Pizza",
       "gallery.pizza.description": "Innovative Kreationen",
       
       // Gallery categories
@@ -826,7 +848,7 @@ const resources = {
       "gallery.categories.ingredients": "Zutaten",
       "gallery.categories.restaurant": "Restaurant",
       "gallery.categories.preparation": "Zubereitung",
-      "gallery.description": "Entdecken Sie unsere Leidenschaft für molekulare Pizza durch Bilder unseres Lokals, unserer Gerichte und unserer Zubereitungsmethoden."
+      "gallery.description": "Entdecken Sie unsere Leidenschaft für Pizza durch Bilder unseres Lokals, unserer Gerichte und unserer Zubereitungsmethoden."
     }
   }
 };

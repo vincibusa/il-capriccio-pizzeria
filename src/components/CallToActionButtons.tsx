@@ -12,7 +12,7 @@ const CallToActionButtons: React.FC<CallToActionButtonsProps> = ({ onReservation
     <div className="flex flex-col sm:flex-row gap-4">
       <button
         onClick={onReservationClick}
-        className="pizza-btn bg-pizza-gold text-black px-8 py-4 rounded-md shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
+        className="pizza-btn bg-pizza-gold text-black px-8 py-4  shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
       >
         <FaCalendarAlt className="mr-2" />
         <span className="font-montserrat font-medium">{t("reservationButton")}</span>
@@ -22,7 +22,7 @@ const CallToActionButtons: React.FC<CallToActionButtonsProps> = ({ onReservation
         href="/menu.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="pizza-btn bg-black text-white px-8 py-4 rounded-md shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
+        className="pizza-btn bg-black text-white px-8 py-4  shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 transition-all duration-200 flex items-center justify-center"
       >
         <FaUtensils className="mr-2" />
         <span className="font-montserrat font-medium">{t("viewMenuButton")}</span>

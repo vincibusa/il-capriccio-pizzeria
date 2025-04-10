@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
-import { FiCalendar, FiClock, FiUsers, FiCheck, FiX, FiAlertCircle } from "react-icons/fi";
+import { FiCalendar, FiClock, FiUsers, FiCheck, FiX, FiAlertCircle, FiMapPin } from "react-icons/fi";
 import { format } from "date-fns";
 import { addReservation, getShiftsForDate } from "../services/Reservation";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,7 @@ interface FormData {
   date: string;
   time: string;
   seats: number;
+  location: string;
   specialRequests?: string;
 }
 
@@ -32,6 +33,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
     date: "",
     time: "",
     seats: 1,
+    location: "",
     specialRequests: ""
   });
 
@@ -90,6 +92,9 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
     if (!formData.time) {
       newErrors.time = t("reservationModal.error.timeRequired");
     }
+    if (!formData.location) {
+      newErrors.location = t("reservationModal.error.locationRequired");
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -107,6 +112,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
           date: formData.date,
           time: formData.time,
           seats: formData.seats,
+          location: formData.location,
           specialRequests: formData.specialRequests,
           status: 'pending' as const
         };
@@ -289,6 +295,29 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
             </div>
           </div>
 
+          {/* Campo Località */}
+          <div>
+            <label className="block text-sm font-body text-gray-800 mb-2">
+              {t("reservationModal.locationLabel")}
+            </label>
+            <div className="relative">
+              <FiMapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-pizza-red" />
+              <select
+                name="location"
+                value={formData.location}
+                onChange={handleInputChange}
+                className={`w-full pl-10 pr-4 py-2 rounded-md border ${
+                  errors.location ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-pizza-red appearance-none`}
+              >
+                <option value="">{t("reservationModal.locationPlaceholder")}</option>
+                <option value="Canicattini Bagni">Canicattini Bagni</option>
+                <option value="Avola">Avola</option>
+              </select>
+            </div>
+            {errors.location && <p className="mt-1 text-sm text-red-500">{errors.location}</p>}
+          </div>
+
           {/* Numero di Persone */}
           <div>
             <label className="block text-sm font-body text-gray-800 mb-2">
@@ -372,6 +401,9 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
               </p>
               <p className="text-sm">
                 <strong>{t("reservationModal.timeLabel")}:</strong> {formData.time}
+              </p>
+              <p className="text-sm">
+                <strong>{t("reservationModal.locationLabel")}:</strong> {formData.location}
               </p>
               <p className="text-sm">
                 <strong>{t("reservationModal.peopleLabel")}:</strong> {formData.seats}

@@ -8,6 +8,7 @@ export interface Reservation {
   date: string;   // formato "YYYY-MM-DD"
   time: string;   // formato "HH:mm" (es. "19:00", "19:30", ecc.)
   seats: number;
+  location: string; // Canicattini Bagni o Avola
   specialRequests?: string;
   status: 'pending' | 'accepted' | 'rejected';  // nuovo campo per lo stato
   email: string;  // nuovo campo per l'email
