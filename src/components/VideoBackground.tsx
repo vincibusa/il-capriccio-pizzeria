@@ -5,14 +5,11 @@ import CallToActionButtons from "./CallToActionButtons";
 import { useTranslation } from "react-i18next";
 import OptimizedImage from "./OptimizedImage";
 
-// Placeholder images
-const placeholderImages = {
-  pizza1: "https://placehold.co/1920x1080/222222/FFFFFF/webp?text=Pizza+Napoletana",
-  ingredients: "https://placehold.co/1920x1080/222222/FFFFFF/webp?text=Ingredienti+Freschi",
-  restaurant1: "https://placehold.co/1920x1080/222222/FFFFFF/webp?text=Il+Nostro+Locale",
-  pizza2: "https://placehold.co/1920x1080/222222/FFFFFF/webp?text=Le+Nostre+Specialità",
-  restaurant2: "https://placehold.co/1920x1080/222222/FFFFFF/webp?text=Atmosfera+Unica"
-};
+// Importare le immagini direttamente
+import image1 from "../assets/1.jpeg";
+import image2 from "../assets/2.jpeg";
+import image3 from "../assets/3.jpeg";
+import image4 from "../assets/4.jpeg";
 
 interface VideoBackgroundProps {
   onReservationClick: () => void;
@@ -28,32 +25,27 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ onReservationClick })
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const SLIDE_DURATION = 5000; // Durata di ogni slide in millisecondi
   
-  // Immagini per il carosello dalle foto di Molecola Pizzeria
+  // Immagini per il carosello dalle foto del ristorante
   const carouselImages = [
     { 
       id: 1, 
-      src: placeholderImages.pizza1,
-      alt: t("carousel.pizzaAlt")
+      src: image1,
+      alt: t("carousel.restaurantAlt")
     },
     { 
       id: 2, 
-      src: placeholderImages.ingredients,
-      alt: t("carousel.ingredientsAlt")
+      src: image2,
+      alt: t("carousel.restaurantAlt")
     },
     { 
       id: 3, 
-      src: placeholderImages.restaurant1,
+      src: image3,
       alt: t("carousel.restaurantAlt")
     },
     { 
       id: 4, 
-      src: placeholderImages.pizza2,
+      src: image4,
       alt: t("carousel.pizzaAlt")
-    },
-    { 
-      id: 5, 
-      src: placeholderImages.restaurant2,
-      alt: t("carousel.restaurantAlt")
     }
   ];
   
