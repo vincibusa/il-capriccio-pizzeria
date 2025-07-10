@@ -7,25 +7,18 @@ import "react-toastify/dist/ReactToastify.css";
 import emailjs from '@emailjs/browser';
 import {
   Reservation,
-  Shift,
   subscribeToReservations,
   updateReservation,
   deleteReservation,
-  getShiftsForDate,
-  updateShift,
-  initializeShiftsForDate,
-  allTimes,
   acceptReservation,
   rejectReservation
 } from "../services/Reservation";
 import ReservationModalEdit from "../components/ReservationModalEdit";
 
 const ReservationPage: React.FC = () => {
-  // Stati per le prenotazioni, la data selezionata e i turni
+  // Stati per le prenotazioni e la data selezionata
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>(format(new Date(), "yyyy-MM-dd"));
-  const [shifts, setShifts] = useState<Shift[]>([]);
-  const [selectedShift, setSelectedShift] = useState<string>(allTimes[0]);
 
   // Stati per modale edit e delete
   const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
@@ -46,25 +39,7 @@ const ReservationPage: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
-  // Carica i turni per la data selezionata
-  useEffect(() => {
-    const loadShifts = async () => {
-      try {
-        let shiftsData = await getShiftsForDate(selectedDate);
-        if (shiftsData.length === 0) {
-          await initializeShiftsForDate(selectedDate);
-          shiftsData = await getShiftsForDate(selectedDate);
-        }
-        setShifts(shiftsData);
-        if (!shiftsData.find((s) => s.time === selectedShift)) {
-          setSelectedShift(allTimes[0]);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    loadShifts();
-  }, [selectedDate]);
+  // Non carichiamo più i turni
 
   // Filtra le prenotazioni in base alla data selezionata
   const filteredReservations = reservations.filter(
@@ -97,27 +72,12 @@ const ReservationPage: React.FC = () => {
     }
   }, [selectedReservation]);
 
-  // Gestione della modifica della data e del turno
+  // Gestione della modifica della data
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSelectedDate(e.target.value);
   };
 
-  const handleShiftChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedShift(e.target.value);
-  };
-
-  const toggleShiftStatus = async () => {
-    try {
-      const currentShift = shifts.find((s) => s.time === selectedShift);
-      const shiftToUpdate = currentShift || { time: selectedShift, enabled: false, maxReservations: 15 };
-      await updateShift(selectedDate, selectedShift, { enabled: !shiftToUpdate.enabled });
-      const updatedShifts = await getShiftsForDate(selectedDate);
-      setShifts(updatedShifts);
-      toast.success(`Turno ${selectedShift} ${!shiftToUpdate.enabled ? "attivato" : "bloccato"}`);
-    } catch (error) {
-      toast.error("Errore nell'aggiornamento dello stato del turno");
-    }
-  };
+  // Rimuoviamo la gestione dei turni
 
   const handleAccept = useCallback(async (reservation: Reservation) => {
     try {
@@ -177,69 +137,25 @@ const ReservationPage: React.FC = () => {
     <div className="min-h-screen p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header: titolo, selezione data e gestione dei turni */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8 mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
-            Prenotazioni
-          </h1>
-          
-          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-            {/* Selettore della data */}
-            <div className="relative">
-              <input
-                type="date"
-                value={selectedDate}
-                onChange={handleDateChange}
-                className="w-full sm:w-auto px-4 py-2.5 bg-white border border-gray-300 rounded-lg shadow-sm
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  text-gray-700 cursor-pointer hover:border-blue-500 transition-colors"
-              />
-            </div>
-
-            {/* Select per il turno */}
-            <div className="relative">
-              <select
-                value={selectedShift}
-                onChange={handleShiftChange}
-                className="w-full sm:w-auto appearance-none px-4 py-2.5 pr-10 bg-white border border-gray-300 rounded-lg shadow-sm
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  text-gray-700 cursor-pointer hover:border-blue-500 transition-colors"
-              >
-                {allTimes.map((time) => {
-                  const shift = shifts.find((s) => s.time === time);
-                  const enabled = shift ? shift.enabled : false;
-                  return (
-                    <option 
-                      key={time} 
-                      value={time}
-                      className="py-2"
-                    >
-                      {time} {enabled ? "(Attivo)" : "(Bloccato)"}
-                    </option>
-                  );
-                })}
-              </select>
-              {/* Icona freccia custom */}
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-
-            {/* Bottone per alternare lo stato del turno */}
-            <button
-              onClick={toggleShiftStatus}
-              className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
-                active:bg-blue-800 transition-colors duration-200 shadow-sm
-                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              {shifts.find((s) => s.time === selectedShift)?.enabled ? "Blocca" : "Sblocca"}
-            </button>
+        <div className="flex flex-col md:flex-row items-center justify-between mb-6">
+          <h1 className="text-3xl font-bold text-pizza-red mb-4 md:mb-0">Gestione Prenotazioni</h1>
+          <div className="flex items-center space-x-4">
+            <FiCalendar className="text-pizza-red" />
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+              className="p-2 border rounded"
+            />
           </div>
         </div>
 
-        {/* Lista delle prenotazioni per la data selezionata */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* Rimuoviamo la sezione di gestione turni */}
+
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold text-pizza-brown mb-4">
+            Prenotazioni per il {format(new Date(selectedDate), "dd/MM/yyyy")}
+          </h2>
           {filteredReservations.length > 0 ? (
             filteredReservations.map((reservation) => (
               <div key={reservation.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">

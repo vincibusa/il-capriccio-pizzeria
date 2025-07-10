@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { FiCalendar, FiClock, FiUsers, FiCheck, FiX, FiAlertCircle, FiMapPin } from "react-icons/fi";
 import { format } from "date-fns";
-import { addReservation, getShiftsForDate } from "../services/Reservation";
+import { addReservation, allTimes } from "../services/Reservation";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
@@ -43,32 +43,18 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
   const [showError, setShowError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  // Stato per memorizzare le fasce orarie disponibili per la data selezionata
-  const [availableTimeSlots, setAvailableTimeSlots] = useState<string[]>([]);
+  // Utilizziamo direttamente allTimes per le fasce orarie, non più lo stato
+  const availableTimeSlots = allTimes;
 
   useEffect(() => {
-    const loadAvailableTimes = async () => {
-      if (formData.date) {
-        try {
-          const shifts = await getShiftsForDate(formData.date);
-          // Filtriamo solo gli shift abilitati
-          const available = shifts.filter((shift) => shift.enabled).map((shift) => shift.time);
-          setAvailableTimeSlots(available);
-          // Se l'orario selezionato non è più disponibile, lo resettiamo
-          if (!available.includes(formData.time)) {
-            setFormData((prev) => ({ ...prev, time: "" }));
-          }
-        } catch (error) {
-          console.error("Error loading available times", error);
-          setAvailableTimeSlots([]);
-        }
-      } else {
-        setAvailableTimeSlots([]);
-      }
-    };
-
-    loadAvailableTimes();
+    // Se la data cambia, potremmo voler resettare l'orario se non è più valido
+    // Ma per ora, con tutti gli orari sempre disponibili, questo non è strettamente necessario
+    // Mantengo il blocco per coerenza strutturale, ma è meno critico
+    if (formData.date && !availableTimeSlots.includes(formData.time)) {
+      setFormData((prev) => ({ ...prev, time: "" }));
+    }
   }, [formData.date, formData.time]);
+
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -275,19 +261,21 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
                   name="time"
                   value={formData.time}
                   onChange={handleInputChange}
-                  className={`w-full pl-10 pr-4 py-2 rounded-md border ${
-                    errors.time ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-pizza-red appearance-none`}
+                  className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pizza-red appearance-none"
                 >
-                  <option value="">{t("reservationModal.timePlaceholder")}</option>
+                  <option value="" disabled>
+                    {t("reservationModal.timePlaceholder")}
+                  </option>
                   {availableTimeSlots.length > 0 ? (
-                    availableTimeSlots.map((slot) => (
-                      <option key={slot} value={slot}>
-                        {slot}
+                    availableTimeSlots.map((time) => (
+                      <option key={time} value={time}>
+                        {time}
                       </option>
                     ))
                   ) : (
-                    <option value="">{t("reservationModal.noTimeSlots")}</option>
+                    <option value="" disabled>
+                      {t("reservationModal.noTimeSlots")}
+                    </option>
                   )}
                 </select>
               </div>

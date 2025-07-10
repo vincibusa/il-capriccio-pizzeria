@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 interface SEOSchemaProps {
   type: 'restaurant' | 'menu' | 'article';
@@ -195,13 +194,8 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type }) => {
     schemaData = articleSchema as ArticleSchema;
   }
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
-    </Helmet>
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />;
+
 };
 
 export default SEOSchema;

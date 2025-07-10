@@ -14,12 +14,6 @@ export interface Reservation {
   email: string;  // nuovo campo per l'email
 }
 
-export interface Shift {
-  time: string;           // Es. "19:00", "20:00", ecc.
-  enabled: boolean;       // Indica se il turno è attivo (sbloccato) oppure no
-  maxReservations: number; // Numero massimo di posti prenotabili (default 15)
-}
-
 // Array costante con tutti gli orari desiderati
 export const allTimes = [
   "19:00", "19:15", "19:30", "19:45", 
@@ -27,60 +21,13 @@ export const allTimes = [
   "21:00", "21:15", "21:30"
 ];
 
-/**
- * Inizializza gli shift di default per una data specifica.
- * Per ogni orario in allTimes crea uno Shift; di default vengono abilitati solo "19:00", "20:00" e "21:30".
- */
-export const initializeShiftsForDate = async (date: string): Promise<void> => {
-  const shiftsRef = database.ref(`shifts/${date}`);
-  const defaultShifts: Shift[] = allTimes.map((time) => {
-    // Imposta attivi di default solo 19:00, 20:00 e 21:30
-    const enabled = (time === "19:00" || time === "20:00" || time === "21:30");
-    return { time, enabled, maxReservations: 100 };
-  });
-  for (const shift of defaultShifts) {
-    await shiftsRef.child(shift.time).set(shift);
-  }
-};
+const MAX_RESERVATIONS_PER_SLOT = 100; // Impostiamo un valore globale
 
 /**
- * Aggiorna le impostazioni di un turno per una data specifica.
- */
-export const updateShift = async (
-  date: string,
-  time: string,
-  shift: Partial<Shift>
-): Promise<void> => {
-  const shiftRef = database.ref(`shifts/${date}/${time}`);
-  await shiftRef.update(shift);
-};
-
-/**
- * Recupera tutti gli shift per una data specifica.
- */
-export const getShiftsForDate = async (date: string): Promise<Shift[]> => {
-  const shiftsRef = database.ref(`shifts/${date}`);
-  const snapshot = await shiftsRef.once('value');
-  const shifts: Shift[] = [];
-  snapshot.forEach(childSnapshot => {
-    shifts.push(childSnapshot.val());
-  });
-  return shifts;
-};
-
-/**
- * Aggiunge una prenotazione, controllando che il turno esista, sia abilitato e che il numero totale di posti prenotati non superi il limite.
+ * Aggiunge una prenotazione, controllando che il numero totale di posti prenotati non superi il limite.
  */
 export const addReservation = async (reservation: Reservation): Promise<string | null> => {
   try {
-    // Verifica che il turno esista e sia abilitato
-    const shiftRef = database.ref(`shifts/${reservation.date}/${reservation.time}`);
-    const shiftSnapshot = await shiftRef.once('value');
-    if (!shiftSnapshot.exists() || !shiftSnapshot.val().enabled) {
-      throw new Error('Turno non disponibile');
-    }
-    const shift: Shift = shiftSnapshot.val();
-
     // Somma i posti prenotati per quel turno nella data
     const reservationsRef = database.ref('reservations');
     const snapshot = await reservationsRef.orderByChild('date').equalTo(reservation.date).once('value');
@@ -93,8 +40,8 @@ export const addReservation = async (reservation: Reservation): Promise<string |
     });
 
     // Se superiamo il limite, genera un errore
-    if (totalSeats + reservation.seats > shift.maxReservations) {
-      throw new Error('Turno al completo');
+    if (totalSeats + reservation.seats > MAX_RESERVATIONS_PER_SLOT) {
+      throw new Error('Fascia oraria al completo');
     }
 
     // Aggiunge la prenotazione con stato pending di default
